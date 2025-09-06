@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --color-white: #fff;
+  --color-black: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--color-white);
+  font-family: "Lato", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+ul li {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--color-white);
+  position: relative;
+  transform: translatey(0);
+  transition: 0.2s ease-in-out;
+}
+
+ul li:hover {
+  transform: translatey(-0.625rem);
+  cursor: pointer;
+}
+
+ul li::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.2);
+}
+
+ul li span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 0.6rem;
+  color: var(--color-white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li+li {
+  margin-left: -0.625rem;
+}
+
+ul img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+main {
+  padding-block: min(20vh, 2rem);
+  width: calc(min(70rem, 90%));
+  margin-inline: auto;
+  color: var(--color-black);
+  position: relative;
+}
+
+main .heading h1 {
+  letter-spacing: 0.025em;
+  font-size: clamp(2.5rem, 3.5vw, 5.5rem);
+  line-height: 1;
+  font-family: "Lato", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+main .heading aside {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+main .heading aside p {
+  font-size: 0.9rem;
+  color: var(--color-black);
+  line-height: 1.5;
+}
+
+main .container {
+  margin-top: 2em;
+  display: grid;
+  gap: 1.5rem;
+}
+
+main .card {
+  padding-block: 1rem;
+  background: var(--color-white);
+  border-radius: 1.2rem;
+  position: relative;
+  height: 24rem;
+  animation-name: fadeIn;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+main .card p {
+  position: absolute;
+  right: 0;
+  top: -1.25rem;
+}
+
+main .card p a {
+  font-size: 0.9rem;
+  display: inline-block;
+  color: var(--color-black);
+}
+
+main .card p a:hover {
+  font-weight: 600;
+}
+
+main .card .card_inner {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border-bottom-right-radius: 0;
+}
+
+main .card .card_inner .box {
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+main .card .card_inner .box .img_box {
+  position: absolute;
+  inset: 0;
+}
+
+main .card .card_inner .box .img_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* the background curves around the profile circles and arrow */
+main .card .card_inner .box .more {
+  position: absolute;
+  top: -0.375rem;
+  right: 0;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-white);
+  padding: 0.625rem 0 0.625rem 0.625rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/* the background curves before the profile circles and arrow */
+main .card .card_inner .box .more::before {
+  position: absolute;
+  content: "";
+  top: 0.375rem;
+  left: -1.188rem;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--color-white);
+  transform: rotate(-90deg);
+}
+
+/* the background curves after the profile circles and arrow */
+main .card .card_inner .box .more::after {
+  position: absolute;
+  content: "";
+  bottom: -1.188rem;
+  right: -0.063rem;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--color-white);
+  transform: rotate(-90deg);
+}
+
+main .card .card_inner .box .more .arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.125rem solid #c8c8c8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+main .card .card_inner .box .more .arrow:hover {
+  background: var(--color-black);
+  border: 0.125rem solid var(--color-black);
+  color: var(--color-white);
+}
+
+main .card .card_inner .box .more .arrow:hover svg {
+  color: var(--color-white);
+}
+
+main .card .card_inner .box .more svg {
+  width: 1.063rem;
+  color: var(--color-black);
+}
+
+/* the background curves around the hashtag buttons */
+main .card .card_inner .box .tag {
+  position: absolute;
+  bottom: -0.375rem;
+  left: 0;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-white);
+  padding: 0.625rem 0.625rem 0.625rem 0;
+  border-top-right-radius: 1rem;
+}
+
+/* the background curves before the hashtag buttons */
+main .card .card_inner .box .tag::before {
+  position: absolute;
+  content: "";
+  top: -1.188rem;
+  left: 0;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--color-white);
+  transform: rotate(90deg);
+}
+/* the background curves after the hashtag buttons */
+main .card .card_inner .box .tag::after {
+  position: absolute;
+  content: "";
+  bottom: 0.375rem;
+  right: -1.188rem;
+  background: transparent;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 0.313rem 0.313rem 0px 0.313rem var(--color-white);
+  transform: rotate(90deg);
+}
+
+main .card .card_inner .box .tag a {
+  font-size: 0.8rem;
+  color: var(--color-black);
+  font-weight: 400;
+  border: 0.125rem solid #c8c8c8;
+  border-radius: 3.125rem;
+  padding: 0.313rem 0.625rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+main .card .card_inner .box .tag a:hover {
+  color: var(--color-white);
+  background: var(--color-black);
+  border: 0.125rem solid var(--color-black);
+}
+
+.tag a {
+  font-size: 0.8rem;
+  color: var(--color-black);
+  font-weight: 400;
+  border: 0.125rem solid #c8c8c8;
+  border-radius: 3.125rem;
+  padding: 0.313rem 0.625rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.tag a:hover {
+  color: var(--color-white);
+  background: var(--color-black);
+  border: 0.125rem solid var(--color-black);
+}
+
+/* media queries for responsive behavior*/
+@media screen and (min-width: 767px) {
+  main .heading {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main .heading aside {
+    margin-top: 3em;
+    max-width: 40%;
+  }
+
+  main .container {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3.5em;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  main .card {
+    border-radius: 1.8rem;
+  }
+
+  main .card .card_inner .box .img_box img {
+    border-radius: 1.6rem;
+  }
+
+  main .heading h1 {
+    max-width: 50%;
+  }
+}
+
+/* reference from
+https://dribbble.com/shots/22764492-Travel-website-Tours-and-glamping
+kristen17/pen/poMzXob
+*/
