@@ -1,7 +1,7 @@
 # Woods-Feautred-Product-Grid
 Moduled grid display component. This was created using pseudo-classes in CSS and HTML. 
 
-
+https://kanan49.github.io/Woods-Feautred-Product-Grid/
 
 
 
