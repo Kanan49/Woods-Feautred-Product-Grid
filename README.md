@@ -1,2 +1,2 @@
 # Woods-Feautred-Product-Grid
-Moduled grid display component. This was created using HTML, CSS, Js. 
+Moduled grid display component. This was created using pseudo-classes in CSS, HTML and JavaScript. 
