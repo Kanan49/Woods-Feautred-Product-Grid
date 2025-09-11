@@ -128,11 +128,23 @@ main .card {
   height: 24rem;
   /* Zoom Animation */
   transition: transform .2s;
+  /* shorthand: name | duration | timing | delay | iteration-count | direction | fill-mode */
+  animation: fadein 3s ease-in-out 0.2s;
   cursor: pointer;
 }
 
 main .card:hover {
   transform: scale(1.1);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 
